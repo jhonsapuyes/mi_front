@@ -19,12 +19,18 @@ import Logo from "./components/logo";
 import NoPage from "./components/nopage";
 
  
-const url= "http://localhost:9000/api/usuarios"
+//const url= "http://localhost:9000/api/usuarios"
+const url= "http://129.151.118.62:9000/api/usuarios"
 
-const url_deportes= "http://localhost:9000/api/deportes"
-const url_equipos= "http://localhost:9000/api/equipos"
+//const url_deportes= "http://localhost:9000/api/deportes"
+const url_deportes= "http://129.151.118.62:9000/api/deportes"
 
-const url_events= "http://localhost:9000/api/marcadores"
+//const url_equipos= "http://localhost:9000/api/equipos"
+const url_equipos= "http://129.151.118.62:9000/api/equipos"
+
+//const url_events= "http://localhost:9000/api/marcadores"
+const url_events= "http://129.151.118.62:9000/api/marcadores"
+
 const field_id_events= 'mar_id'
 
 
@@ -333,6 +339,7 @@ class App extends Component {
                   if(this.state.form_events.mar_equi_2 != "" && this.state.form_events.mar_equi_2 != undefined){
                     if(this.state.form_events.mar_dep_id != "" && this.state.form_events.mar_dep_id != undefined){
                       if(this.state.form_events.mar_usu_id != "" && this.state.form_events.mar_usu_id != undefined){
+                        delete this.state.form_events.mar_id
                         await axios.post(url_events, this.state.form_events).then((response) =>{
                           this.peticion_get()
                           this.setState({form_events:''})
