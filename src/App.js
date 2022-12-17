@@ -472,7 +472,8 @@ class App extends Component {
   }
 
   rdtc_l= ()=>{ // esta en login
-    window.location.href="http://localhost:3000/deportescolombia/events"; 
+    //window.location.href="http://localhost:3000/deportescolombia/events"; 
+    window.location.href="http://129.151.105.200/:3000/deportescolombia/events"; 
   }
   // login la pueden mover para diseñarla con css o bootstrap
   login= ()=>{ //esta en render(routes) 
